@@ -1,20 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TODO supply a title</title>
+    <title>Tynimce RequireJs</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+      div#log {
+        background: #000;
+        color: #fff;
+      }
+      h6, pre {
+        float: left;
+      }
+      h6 {
+        width: 5%;
+        margin: 0;
+        padding: 5px;
+        font-family: Times;
+        font-size: 10px;
+      }
+      pre {
+        margin: 0;
+        width: 95%;
+        font-family: Courier;
+        padding: 5px;
+      }
+
+      div#log div:before, div#log div:after {
+        content: " ";
+        display: table;
+      }
+      div#log div:after {
+        clear: both;
+      }
+    </style>
   </head>
   <body>
-    <div>TODO write content</div>
-    <textarea id="inst1"></textarea>
-    <div id="controls1">
-      <input type="button" id="removeInst1" value="remove">
-      <input type="button" id="toggleInst1" value="toggle">
-    </div>
-    <div id="controls2" style="display:none;">
-      <input type="button" id="createInst1" value="create">
-    </div>
+    <form method="post">
+      <fieldset>
+        <legend>Try it out</legend>
+        <textarea id="inst1" name="message"></textarea>
+      </fieldset>
+      <fieldset>
+        <legend>Controls</legend>
+        <div id="controls1">
+          <input type="button" id="checkInst1" value="check">
+          <input type="button" id="updateInst1" value="update">
+          <input type="button" id="focusInst1" value="focus">
+          <input type="button" id="removeInst1" value="remove">
+          <input type="button" id="toggleInst1" value="toggle">
+        </div>
+        <div id="controls2" style="display:none;">
+          <input type="button" id="createInst1" value="create">
+        </div>
+        <hr>
+        <div>
+          <input type="submit" value="Save">
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Controls</legend>
+        <div>
+          <input type="button" id="clearLog" value="clear">
+        </div>
+        <hr>
+        <div id="log"></div>
+      </fieldset>
+    </form>
+
+
     <script data-main="main" src="bower_components/requirejs/require.js"></script>
   </body>
 </html>

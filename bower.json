@@ -8,6 +8,7 @@
   "private": true,
   "dependencies": {
     "jquery": "~2.1",
+    "jquery.cookie": "1.4.*",
     "requirejs": "~2.1",
     "tinymce": "~4.1",
     "bower-tinymce-amd": "*"
