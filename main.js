@@ -8,7 +8,7 @@ require.config({
     tinyMCE: 'bower_components/bower-tinymce-amd/tinyMCE'
   },
   shim: {
-    jqueryCookie : {
+    jqueryCookie: {
       deps: ['jquery']
     }
   }
@@ -27,7 +27,7 @@ require(
         statusbar: false,
         toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist',
       },
-      log = function(str){
+      log = function(title, str){
         var div = $('<div>'),
             now = new Date();
 
@@ -35,15 +35,11 @@ require(
           str = JSON.stringify(str);
         }
 
-        if (!str) {
-          str = $('<i>').text('empty');
-        }
-
         div
-          .append($('<h6>').text(
+          .append($('<h6>').html(
             now.getHours() + ':' +
             now.getMinutes() + ':' +
-            now.getSeconds()
+            now.getSeconds() + '<br>' + title
           ))
           .append($('<pre>').html(str))
         ;
@@ -53,8 +49,8 @@ require(
       memoryStr = $.cookie('form'),
       memory = [
         {
-          name :'message',
-          value :''
+          name: 'message',
+          value: ''
         }
       ],
       restore = function(){
@@ -80,6 +76,13 @@ require(
       restore();
       createEd();
 
+      ed.on('focus', function(e){
+        log('editor focused', '');
+      });
+      ed.on('blur', function(e){
+        log('editor blured', '');
+      });
+
       $('input#clearLog').click(function(e){
         $('div#log').html('');
       });
@@ -91,11 +94,11 @@ require(
       });
 
       $('input#checkInst1').click(function(){
-        log($('textarea#inst1').val());
+        log('textarea content', $('textarea#inst1').val());
       });
       $('input#updateInst1').click(function(){
         ed.save();
-        log($('textarea#inst1').val());
+        log('textarea content', $('textarea#inst1').val());
       });
       $('input#focusInst1').click(function(){
         ed.focus();
@@ -119,7 +122,7 @@ require(
 
         e.preventDefault();
         save = JSON.stringify($(this).serializeArray());
-        log(save);
+        log('memory saved', save);
         $.cookie('form', save);
       });
     });
