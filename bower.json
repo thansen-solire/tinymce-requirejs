@@ -4,7 +4,6 @@
   "authors": [
     "thansen <thansen@solire.fr>"
   ],
-  "main": "main.js",
   "license": "CC BY-NC 4.0",
   "private": true,
   "dependencies": {
