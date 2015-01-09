@@ -1,0 +1,19 @@
+{
+  "name": "bower-tinymce-amd-test",
+  "version": "0.0.0",
+  "authors": [
+    "thansen <thansen@solire.fr>"
+  ],
+  "main": "main.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1",
+    "requirejs": "~2.1",
+    "tinymce": "~4.1",
+    "bower-tinymce-amd": "*"
+  }
+}
