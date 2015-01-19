@@ -10,6 +10,12 @@
       *:after {
         box-sizing: border-box;
       }
+      body {
+        font-size: 14px;
+      }
+      p {
+        margin: 10px 0;
+      }
       div#log {
         background: #000;
         color: #fff;
@@ -28,9 +34,11 @@
         margin: 0;
         width: 95%;
         font-family: Courier;
-        padding: 5px;
+        padding: 10px;
       }
-
+      div#log div {
+        border-bottom: 1px dotted #fff;
+      }
       div#log div:before, div#log div:after {
         content: " ";
         display: table;

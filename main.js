@@ -121,6 +121,7 @@ require(
         var save = null;
 
         e.preventDefault();
+        ed.save();
         save = JSON.stringify($(this).serializeArray());
         log('memory saved', save);
         $.cookie('form', save);
